@@ -1,0 +1,22 @@
+{
+  "name": "gracile.js",
+  "version": "0.0.3",
+  "description": "Gracile.js is progressive MVC framework with open source code.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node gracile serve"
+  },
+  "keywords": [
+    "framewrok",
+    "frontend",
+    "backend",
+    "fullstack",
+    "mvc"
+  ],
+  "author": "CBStudio<a.pavlov123123@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.4.3",
+    "express": "^4.17.1"
+  }
+}
