@@ -1,0 +1,52 @@
+{% extends 'layouts/default.twig' %}
+{% block title %} Gracile Introduction {% endblock %}
+{% block content %}
+<nav class="uk-navbar-container uk-margin" uk-navbar style="background: #36D88A;">
+    <div class="uk-navbar-left">
+
+        <a class="uk-navbar-item uk-logo" href="/" style="color: #F8F8F8;">Gracile</a>
+
+        <ul class="uk-navbar-nav">
+            {% for item in navigation %}
+                {% if item.active %}
+                    <li class="uk-active"><a style="color: #F8F8F8;" href="{{ item.href }}">{{ item.title }}</a></li>
+                {% else %}
+                    <li><a style="color: #F8F8F8;" href="{{ item.href }}">{{ item.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+<div class="uk-container">
+    <div class="uk-align-center">
+        <h1 class="uk-h2 uk-text-center">
+            Gracile is a progressive framework that allows you to create large-scale and simple web applications, making it quick and easy.
+        </h1>
+        <center>
+            <button class="uk-button uk-button-default uk-button-large">Get started with Gracile</button>
+        </center>
+    </div>
+    <hr class="uk-column-divider">
+    <div class="uk-h3">What is Gracile?</div>
+    <div class="uk-flex">
+        <div>
+            <ul class="uk-list">
+                <li><span uk-icon="bolt"></span> <span class="uk-h4">Quick</span>
+                    <p>
+                        Gracile based on Express.js, the faster Node.js Back-End framework.
+                    </p>
+                </li>
+                <li><span uk-icon="lock"></span> <span class="uk-h4">Secure</span>
+                    <p>
+                        Gracile does everything it can to protect your application.
+                    </p></li>
+                <li><span uk-icon="code"></span> <span class="uk-h4">Simple</span>
+                    <p>
+                        Gracile is based on Twig and Valid JavaScript, making it highly accessible and easy to learn.
+                    </p></li>
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

@@ -1,0 +1,27 @@
+{% extends 'layouts/default.twig' %}
+{% block title %} Info {% endblock %}
+{% block content %}
+<nav class="uk-navbar-container uk-margin" uk-navbar style="background: #36D88A;">
+    <div class="uk-navbar-left">
+
+        <a class="uk-navbar-item uk-logo" href="/" style="color: #F8F8F8;">Gracile</a>
+
+        <ul class="uk-navbar-nav">
+            {% for item in navigation %}
+                {% if item.active %}
+                    <li class="uk-active"><a style="color: #F8F8F8;" href="{{ item.href }}">{{ item.title }}</a></li>
+                {% else %}
+                    <li><a style="color: #F8F8F8;" href="{{ item.href }}">{{ item.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</nav>
+<div class="uk-container">
+    <div class="uk-align-center">
+        <h1 class="uk-h2 uk-text-center">
+            Gracile v{{ pkg.version }} built by {{ pkg.author }}
+        </h1>
+    </div>
+</div>
+{% endblock %}

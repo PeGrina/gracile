@@ -1,8 +1,6 @@
 const GracileCLI = require('./gracile-cli');
 const serve = require('./server/index.js');
 const [fs,path] = [require('fs'), require('path')];
-const chokidar = require('chokidar');
-
 const options = {
     commands: [
         {
