@@ -1,11 +1,10 @@
 {
   "name": "gracile.js",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "Gracile.js is progressive MVC framework with open source code.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon gracile serve",
-    "poststart": "webpack --mode development --watch"
+    "start": "nodemon gracile serve"
   },
   "keywords": [
     "framewrok",

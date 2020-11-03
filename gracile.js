@@ -46,6 +46,23 @@ const options = {
                     console.log('New router ' + routerName + ' was created by path: ' + path.join(routersDir, routerName + '.router.js'));
                 }
             }
+        },
+        {
+            pattern: /^controller$/,
+            callback: (anotherCommands, options)=>{
+                if(options.command === 'make'){
+                    const controllerName = anotherCommands[0].toLowerCase(),
+                      controllersDir = path.join(__dirname, 'controllers'),
+                      controllerPrototype = path.join(__dirname, 'prototypes', 'controller', 'controller.prototype.js'),
+                      controllerProtoStream = fs.readFileSync(controllerPrototype).toString('utf8'),
+                      controllerStream = fs.createWriteStream(path.join(controllersDir, controllerName + '.controller.js'), { encoding: 'utf8' });
+                    let controllerProtoRendered = controllerProtoStream
+                        .replace(/\{name\}/gi, controllerName[0].toUpperCase() + controllerName.slice(1))
+                        .replace(/\{name2\}/gi, controllerName.toLowerCase());
+                    controllerStream.write(controllerProtoRendered);
+                    console.log('New controller ' + controllerName + ' was created by path: ' + path.join(controllersDir, controllerName + '.controller.js'));
+                }
+            }
         }
     ],
     name: 'gracile-cli',

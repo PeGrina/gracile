@@ -1,7 +1,5 @@
-const { webConfig } = require('../config/config');
-const { logger } = webConfig.config.components;
-
-logger.info('g');
+const webConfig = require('../config/web.config');
+const { logger } = webConfig.components;
 
 module.exports = (req, res, next) => {
   logger.debug('Request on: ' + req.url);
