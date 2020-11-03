@@ -1,10 +1,11 @@
 {
   "name": "gracile.js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Gracile.js is progressive MVC framework with open source code.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon gracile serve"
+    "start": "nodemon gracile serve",
+    "pretty": "prettier ."
   },
   "keywords": [
     "framewrok",
@@ -19,9 +20,11 @@
     "express": "^4.17.1",
     "lodash": "^4.17.20",
     "log4js": "^6.3.0",
+    "prettier": "^2.1.2",
     "twig": "^1.15.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
-  }
+  },
+  "repository": "https://github.com/PeGrina/gracile.git"
 }
