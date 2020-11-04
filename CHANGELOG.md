@@ -96,9 +96,13 @@
 - Creating controllers with cli
 - Added changelog.md
 
-# 0.1.3 (current)
+# 0.1.3
 
 ### FEATURES:
 
 - Added prettier, yarn
 - Made readme.md
+
+# 0.1.4  (current)
+
+- Added ESLint
