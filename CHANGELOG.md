@@ -103,6 +103,11 @@
 - Added prettier, yarn
 - Made readme.md
 
-# 0.1.4  (current)
+# 0.1.4
 
 - Added ESLint
+
+# 0.1.5 (current)
+
+- Edited ESLint
+- Reworked config

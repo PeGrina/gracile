@@ -1,9 +1,9 @@
-const Controller = require("../core/lib/Controller");
+const Controller = require('../core/lib/Controller');
 
 class IndexController extends Controller {
-  main(req, res, next) {
-    res.render("index", {
-      navigation: this.getConfig("navigation"),
+  main (req, res, next) {
+    res.render('index', {
+      navigation: this.getConfig('navigation')
     });
     if (next) {
       // Middleware

@@ -6,6 +6,6 @@ module.exports = {
   maxAge: '1d',
   redirect: false,
   setHeaders: function (res, path, stat) {
-    res.set('x-timestamp', Date.now())
+    res.set('x-timestamp', Date.now());
   }
-}
+};

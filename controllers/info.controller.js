@@ -1,12 +1,12 @@
-const Controller = require("../core/lib/Controller");
-const pkjson = require("../package.json");
+const Controller = require('../core/lib/Controller');
+const pkjson = require('../package.json');
 
 class InfoController extends Controller {
-  main(req, res, next) {
-    res.render("info", {
-      navigation: this.getConfig("navigation"),
+  main (req, res, next) {
+    res.render('info', {
+      navigation: this.getConfig('navigation'),
       pkg: pkjson,
-      config: this.getConfig(),
+      config: this.getConfig()
     });
     if (next) {
       // Middleware
