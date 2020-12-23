@@ -107,7 +107,12 @@
 
 - Added ESLint
 
-# 0.1.5 (current)
+# 0.1.5
 
 - Edited ESLint
 - Reworked config
+
+# 0.1.6 (current)
+- Bug fixes
+- Controller changes
+- Readme update

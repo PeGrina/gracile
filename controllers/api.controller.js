@@ -1,7 +1,7 @@
 const Controller = require('../core/lib/Controller');
 
 const callback = (req, res, next, obj) => {
-  return res.send('New controller was created');
+  res.send('New controller was created');
 
   if(next){ // Middleware
     next();  // Continue stack
@@ -10,8 +10,8 @@ const callback = (req, res, next, obj) => {
   }
 }
 
-class {name}Controller extends Controller{}
+class ApiController extends Controller{}
 
-const {name2}Controller = new {name}Controller(callback);
+const apiController = new ApiController(callback);
 
-module.exports = {name2}Controller;
+module.exports = apiController;

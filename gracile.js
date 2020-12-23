@@ -6,7 +6,16 @@ const options = {
     {
       pattern: /^--help|-h|help$/,
       callback: (anotherCommands, options) => {
-        console.log(` Help of ${options.name} `);
+        console.log(`/=====${options.name}=====\\
+Help of ${options.name} 
+Usage: node gracile <command> <options>
+Commands:
+serve <port> <host> - Start the server with specified port or 8080 and host or 127.0.0.1
+make <object> <object_options> - Make specified object (see down)
+Objects:
+router <name> - Router with specified name
+controller <name> - Controller with specified name
+        `);
       }
     },
     {
@@ -14,13 +23,14 @@ const options = {
       // eslint-disable-next-line complexity
       callback: (anotherCommands, options) => {
         const port = anotherCommands[0] || 8080;
+        const host = anotherCommands[1] || '127.0.0.1';
 
         if (process.env.NODE_ENV === 'production') {
-          serve.listen();
+          serve.listen(port, host);
           console.log('Server is started.');
         } else {
-          serve.listen(port, () => {
-            console.log(`Server is started on http://localhost:${port}`);
+          serve.listen(port, host, () => {
+            console.log(`Server is started on http://${host}:${port}`);
           });
         }
       }

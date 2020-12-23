@@ -1,29 +1,31 @@
-class Controller {
-  #path = require("path");
-  #_dirname = __dirname.split(this.#path.sep);
-  #dirname = this.#_dirname.slice(0, this.#_dirname.length - 1);
+const self = {
+  callback: null,
+  getConfig: null,
+  dirname: null
+}
+const path = require('path');
+
+module.exports = class Controller {
+  constructor(callback) {
+    self.callback = callback;
+    self.getConfig = this.getConfig;
+    self.dirname = path.join(__dirname, '..', '..');
+    console.log(self);
+  }
 
   getConfig(name) {
-    return require(this.#path.join(
-      this.#dirname,
+    return require(path.join(
+      self.dirname,
       "config",
       name + ".config.js"
     ));
   }
 
-  main(req, res, next) {
-    /**
-     * Hereditary function
-     * */
-  }
-
   middleware(req, res, next) {
-    return this.main(req, res, next);
+    return self.callback(req, res, next, self);
   }
 
   controller(req, res) {
-    return this.main(req, res, false);
+    return self.callback(req, res, false, self);
   }
 }
-
-module.exports = Controller;

@@ -1,20 +1,20 @@
 const Controller = require('../core/lib/Controller');
 
-class IndexController extends Controller {
-  main (req, res, next) {
-    res.render('index', {
-      navigation: this.getConfig('navigation')
-    });
-    if (next) {
-      // Middleware
-      next(); // Continue stack
-    } else {
-      // Controller
-      res.end(); // End stack
-    }
+const callback = (req, res, next, obj) => {
+  return res.render('index', {
+    navigation: obj.getConfig('navigation')
+  });
+  if (next) {
+    // Middleware
+    next(); // Continue stack
+  } else {
+    // Controller
+    res.end(); // End stack
   }
 }
 
-const indexController = new IndexController();
+class IndexController extends Controller {}
+
+const indexController = new IndexController(callback);
 
 module.exports = indexController;

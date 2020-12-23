@@ -28,10 +28,9 @@ module.exports = class Config {
         conf[el] = this.conf[el];
       }
     }
+    return conf;
   }
   get #config(){
     return this.conf;
   }
 };
-
-module.exports = Config;

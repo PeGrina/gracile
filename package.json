@@ -1,6 +1,6 @@
 {
   "name": "gracile.js",
-  "version": "0.1.3",
+  "version": "0.1.6",
   "description": "Gracile.js is progressive MVC framework with open source code.",
   "main": "index.js",
   "scripts": {
